@@ -1,0 +1,6 @@
+1. Gunakan kata benda daripada kata kerja pada endpoint path
+	ex: /getArticles, /articles, /removearticles
+2. Gunakan kata jamak pada endpoint untuk resource collection
+	ex: /articles/:id
+3. Gunakan endpoint berantai untuk resource yang memiliki hirarki atau kelas
+	ex: /articles/:id/comments

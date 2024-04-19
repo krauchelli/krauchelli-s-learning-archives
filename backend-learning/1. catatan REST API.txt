@@ -1,0 +1,14 @@
+What is REST? 
+Representational State Transfer merupakan salah satu gaya arsitektur yang diadaptasi untuk membangun web service
+
+What is REST API? 
+sebutan lain, RESTful API, merupakan sebutan untuk web services yang menerapkan arsitektur REST. REST itu sendiri merupakan API.
+
+
+Empat (4) Poin yang harus diperhatikan ketika membangun arsitektur web service  berbasis REST API
+1. Format request and response
+2. HTTP Verbs/Methods
+3. HTTP Response Code
+4. URL Design
+
+
