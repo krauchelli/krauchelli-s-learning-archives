@@ -1,0 +1,1 @@
+pada materi ini telah diinstall npm bernama 'moment' dan 'lodash'

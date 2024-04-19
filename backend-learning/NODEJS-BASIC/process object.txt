@@ -1,0 +1,3 @@
+salah satu global objek yang perlu atau penting diketahui adalah objek proces.
+
+dengan objek ini, kita dapat memperoleh informasi mengenai proses yang sedang dijalankan.

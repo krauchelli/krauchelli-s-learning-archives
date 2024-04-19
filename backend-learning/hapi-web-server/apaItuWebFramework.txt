@@ -1,0 +1,8 @@
+web framework merupakan kerangka yang dapat membantu kita dalam pengembangan web, termasuk juga web server.
+
+framework ini berisi banyak bantuan seperti library dan tools yang memudahkan kita dalam penulisan kode sehingga
+nantinya  mudah dikembangkan, terstruktur, dan mudah dipelihara.
+
+contoh web framework:
+- hapi
+- express js

@@ -1,0 +1,35 @@
+** Membuat HTTP Server
+
+** Server route
+    - routing pada hapi tidak menggunakan if else lagi
+    - routing ini dipisahkan berdasarkan objek
+    - cara menuliskan routing yang lebih dari satu menggunakan metode array (satu array ada banyak array)
+    -* disarankan untuk memisahkan route dalam file lain (module) sehingga kita akan menerapkan
+         satu berkas JavaScript hanya memiliki satu fungsi atau tanggung jawab saja (single responsibility principle).
+    - ‘/{any*}’ pada route paling akhir, ini berfungsi untuk menangani permintaan masuk pada path yang belum ditentukan.
+    -  '*' berarti dapat diakses dengan method apapun yang ada di HTTP
+    *Perlu diketahui kedua nilai di atas merupakan fitur dari hapi
+
+** Path parameter
+    - specifically digunakan untuk memberikan alamat dengan nama yang diinginkan
+    - menggunakan framework 'username' yang berasal dari hapi,
+    - variabel framework username ini disimpan pada parameter dengan request.params yang dimiliki handler
+        dengan nama sesuai yang Anda tetapkan (username).
+    - pada properti path di objek route, kita berikan {nama} atau {username} (bebas), jika saat melakukan request kita
+        kosongi nanti hasilnya error. Disinilah kita berikan `?` di akhir nama variabel {nama?}
+
+** Query Parameter
+    - lanjutan dari path parameter. Teknik ini digunakan pada request yang membutuhkan query dari client, seperti pencarian
+        dan filter data berdasarkan bahasa
+    - cara panggilan query parameter di sini pake tambahan ?<variabel>=<nilai>
+        contoh: localhost:5000/hello/nadna?id=lang
+
+** Payload request (body request nya hapi)
+    - kita tak perlu lagi menggunakan JSON.parse() lagi karena hapi secara default sudah bisa mengubah JSON menjadi
+    objek javascript
+
+** Response Toolkit
+    - pada hapi terdapat dua parameter pada fungsi handler, yaitu request dan h.
+    - parameter request ya buat nampung request dari client
+    - parameter h(hapi) merupakan response toolkit bawaan hapi, singkatnya serupa dengan parameter response
+    (lebih lanjut di materi)

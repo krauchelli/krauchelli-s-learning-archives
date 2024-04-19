@@ -1,0 +1,1 @@
+Apa gunanya dari filesystem ini? Gunanya adalah untuk mengakses berkas

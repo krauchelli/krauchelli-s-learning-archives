@@ -1,0 +1,41 @@
+!!!! PERLU DIINGAT, salah satu dari module projek ini secara otomatis menambahkan module dengan destructuring dimana nanti sistem tidak bisa membaca
+Log kesalahan:
+pada tanggal 7 oktober 2023 -- kesalahan deklarasi 'notes' pada handler.js, harusnya deklarasi tanpa destructuring aja, ini malah otomatis pakenya destructuring lagi
+lain kali deklarasi manual aja
+
+<==folder ini termasuk dalam sub materi langkah langkah membuat RESTful API menggunakan API==>
+-*- memasang nodemon, biar gausah npm run start terus tiap ada perubahan kode
+-*- memasang eslint
+
+==> kriteria proyek
+    kriteria pembuatan RESTful API
+    - web server dapat menyimpan catatan
+        -> method POST
+        -> status code 201 (created)
+    - web server dapat menampilkan catatan
+        -> method GET
+        -> status code 200 (OK)
+    - web server dapat mengubah catatan
+        -> method PUT
+        -> status code 200 (OK), dan jika id data tidak ditemukan status code 404 (NOT FOUND)
+    - web server dapat menghapus catatan
+        -> method DELETE
+        -> status code 200 (OK), dan jika id data tidak ditemukan status code 404 (NOT FOUND)
+
+==> Struktur proyek
+    - prinsip proyek ini adalah single responsiblity approach, satu berkas js untuk satu tujuan.
+    - semua berkas js akan disimpan dalam folder bernama 'src' supaya terpisah dari file lain
+        -> server, routes, handler, notes
+
+==> Pembuatan HTTP Server
+==> menyimpan catatan,
+    - menggunakan POST untuk mengirim dan menyimpan catatan
+    - menambahkan notes dan handler js file
+    - menambahkan module nanoid, library yang menangani dan menghasilkan string yang bersifat unik
+    * In short, file handler.js ditambahkan fungsi handler addNoteHandler yang digunakan untuk
+        menambahkan note baru, diteruskan ke routes.js untuk mendaftarkan tipe tipe route apa saja yang nanti akan direspon
+    * routes.js tersebut disisipkan ke server.js dengan bantuan fungsi .route()
+
+==> same origin policy
+==> menampilkan catatan
+==> mengubah catatan

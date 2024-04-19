@@ -1,0 +1,2 @@
+untuk menggantikan metode fs(), kita akan gunakan teknik stream
+Teknik ini dapat menangani kasus baca tulis berkas, komunikasi jaringan, atau beban kerja apapun agar dapat berjalan dengan lebih efisien.

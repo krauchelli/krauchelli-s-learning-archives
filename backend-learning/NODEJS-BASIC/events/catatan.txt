@@ -1,0 +1,10 @@
+tradisionalnya, programming dilakukan dengan cara imperatif, yaitu menuliskan beberapa instruksi dan perintah yang runtut mengikuti langkah-langkah.
+
+*> komputer akan membaca baris kode nya dari atas ke bawah
+
+minusnya kita akan kesulitan menulis program yang dapat menangani suatu kejadian.
+Disinilah kehadiran event-driven pada node.js hadir.
+
+how to use? 
+tarik class 'EventMitter' dari modul 'events'
+--sisanya baca materi dicoding--

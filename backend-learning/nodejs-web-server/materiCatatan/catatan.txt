@@ -1,0 +1,66 @@
+pada materi awalan ini dengan tema sesuai nama folder.
+
+HTTP module memiliki banyak member seperti objek, properti, atau method yang
+berguna untuk melakukan hal-hal terkait protokol HTTP. Salah satu member yang penting untuk kita ketahui sekarang adalah method http.createServer().
+
+Trivia: http.clientRequest merupakan turunan dari readableStream
+
+yang dipelajari:
+* menggunakan module http, method http.server
+* method ini menerima satu parameter custom callback yang digunakan sebagai request listener
+** Pinnacle of this material: Request listener, terdiri dari dua parameter, yakni request dan response
+    * request: menyimpan informasi
+    * response: menanggapi informasi
+*Adapun juga method listen(), untuk selalu menangani setiap permintaan yang masuk.
+Dengan method listen(), tiap ada permintaan masuk, request listener akan tereksekusi.
+
+
+Further materials, buka kembali materi dicoding; belajar membuat aplikasi back-end pemula.
+
+
+
+Continious material learning points:
+- method/verb request -> pake if else untuk pemisahan response dari request, import variabel method (POST, GET, DELETE, etc.)
+
+- body request (untuk selain GET method)
+    poin-poin yang dibahas:
+    - Pertama, kita deklarasikan variabel body dan inisialisasikan nilainya dengan array kosong. Ini berfungsi untuk menampung buffer pada stream.
+    - Lalu, ketika event data terjadi pada request, kita isi array body dengan chunk (potongan data) yang dibawa callback function pada event tersebut.
+    - Terakhir, ketika proses stream berakhir, maka event end akan terbangkitkan. Di sinilah kita mengubah variabel body yang sebelumnya menampung buffer menjadi
+      data sebenarnya dalam bentuk string melalui perintah Buffer.concat(body).toString().
+    - mengubah parameter pada Buffer.concat() yang tadinya body menjadi name sehingga yang dibaca saat melakukan method request hasilnya ngga mentahan json
+    - pada variable name ini kita kasih json.parse() (lebih lanjut di materi dicoding).
+
+- routing request
+    Routing merupakan istilah dalam menentukan respons server berdasarkan path atau url yang diminta oleh client.
+    poin-poin:
+    * membedakan respon dari request dari homepage (/) dan about page (/about) menggunakan variabel url dari http.createServer
+    * pemisahan respon ini dipisah menggunakan pengkondisian dan isinya ada kondisi lagi untuk masing masing request method GET dan POST
+    * adapun else nya jika melakukan request ke url yang tidak dikenal, dan juga menggunakan method yang tidak diperlukan.
+
+
+- Response status
+    pada materi ini kita akan mengubah server yang kita desain dari cuek response status jadi responsif soal status!
+    poin-poin:
+    * mengubah posisi response.statusCode menjadi di masing-masing hasil response method
+    * posisi .statusCode diletakkan sebelum baris response.end(), harus di situ
+        -> jika url tidak ditemukan == 404 (not found)
+        -> jika tidak sesuai dengan method == 400 (bad request)
+        -> jika sesuai url dan/atau method == 200 (OK)
+
+***Trivia dikit, selain coba lewat curl untuk GET, coba di web browser lewat link page, misal masukin url yang mau dicoba.
+
+
+- Response Header
+    response header ini penting sekali untuk menentukan tipe jenis/tipe data yang diterima saat melakukan request
+    sangat disarankan untuk menambahkan huruf 'X' di depan properti jika ingin memberikan properti yang tidak standar/custom header
+    poin-poin:
+    * mengubah response.setHeader pertama (content type) dari text/html -> application/json
+    * menambah response.setHeader baru dengan nama 'X-Powered-by' dengan value NodeJS (properti tidak standar)
+
+
+- Response Body
+    **Trivia sedikit, objek response yang berasal dari instance http.serverResponse merupakan salah satu bentuk Writable Stream,
+    makanya kalo kita liat ada .write(), .end(), dll.
+    poin-poin:
+    * mengubah bentuk end() dari bentuk tag html menjadi format json, karena sebelum nya pada header kita telah mengubah tipe konten nya.
